@@ -1,3 +1,4 @@
+var str = "";
 var str_destaques = "";
 var str_fofocas = "";
 var str_ultimas = "";
@@ -12,18 +13,7 @@ function get_fofocas(){
     dataType: "json",
     success: function(success){
       //console.log(success.fofocas[1]);
-      $.each(success.destaques, function(idx, obj){
-        //str_destaques += '<div class="card text-center">';
-        //str_destaques += '  <h4 class="card-header">'+ obj.titulo +'</h4>';
-	      //str_destaques += '    <div class="card-body">';
-        //str_destaques += '    	<img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="'+obj.imagem+'" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>';
-        //str_destaques += '      <p class="card-text">'+ obj.conteudo +'</p>';
-        //str_destaques += '    </div>';
-        //str_destaques += '</div>';
-        //str_destaques += '<br></br>';
-        
-
-
+      $.each(success.destaques, function(idx, obj){     
         str_destaques += '<div class="col-md-4">'
         str_destaques += '   <div class="card card-chart">'
         str_destaques += '       <img class="card-header card-header" src="'+obj.imagem+'">'   
@@ -43,26 +33,18 @@ function get_fofocas(){
       $.each(success.fofocas, function(idx, obj){
         str_fofocas += '<div class="card text-center">';
         str_fofocas += '  <h4 class="card-header">'+ obj.titulo +'</h4>';
-	      str_fofocas += '    <div class="card-body">';
+        str_fofocas += '    <div class="card-body">';
         $.each(obj.conteudo, function(idx, obj2){
           str_fofocas += '    <img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="'+obj2.imagem+'" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>';
           str_fofocas += '      <p class="card-text">'+ obj2.conteudo +'</p>';
-	        str_fofocas += '      <br>';
+          str_fofocas += '      <br>';
         });
         str_fofocas += '    </div>';
         str_fofocas += '</div>';
         str_fofocas += '<br></br>';
       });
 
-      $.each(success.ultimas, function(idx, obj){
-        //str_ultimas += '<div class="card text-center">';
-	      //str_ultimas += '    <div class="card-body">';
-        //str_ultimas += '    	<img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="'+obj.imagem+'" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><small class="text-muted">'+ obj.data +'</small></img>';
-        //str_ultimas += '      <p class="card-text">'+ obj.conteudo +'</p>';
-        //str_ultimas += '    </div>';
-        //str_ultimas += '</div>';
-        //str_ultimas += '<br></br>';
-        
+      $.each(success.ultimas, function(idx, obj){        
         str_ultimas += '<div class="col-md-4">'
         str_ultimas += '   <div class="card card-chart">'
         str_ultimas += '       <img class="card-header card-header" src="'+obj.imagem+'">'   
@@ -80,7 +62,23 @@ function get_fofocas(){
     },
     error: function(error){
       console.log("Erro ao obter fofocas" + error);
-      alert("Erro ao obter fofocas");
+      str += '<div class="col-lg-3 col-md-6 col-sm-6">'
+            str += '    <div class="card card-stats">'
+            str += '        <div class="card-header card-header-success card-header-icon">'
+            str += '            <div class="card-icon">'
+            str += '                <i class="material-icons">info_outline</i>'
+            str += '            </div>'
+            str += '            <p class="card-category">Error</p>'
+            str += '            <h3 class="card-title">Erro ao obter fofocas!</h3>'
+            str += '        </div>'
+            str += '        <div class="card-footer">'
+            str += '            <div class="stats">'
+            str += '                <i class="material-icons">date_range</i> Last 24 Hours'
+            str += '            </div>'
+            str += '        </div>'
+            str += '    </div>'
+            str += '</div>'
+            document.getElementById("linha_fofocas").innerHTML=str;
     }  
   });
 }

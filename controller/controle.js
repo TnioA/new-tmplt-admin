@@ -11,11 +11,23 @@ function esconde_divs(){
 }
 
 function show_menu_fofocas(){
+        troca_item_ativo("#btn_menu_fofocas");
         if($("#menu_fofocas").is(':hidden')){
                 $("#menu_fofocas").show();
         }else{
                 $("#menu_fofocas").hide();
         }
+}
+
+function troca_item_ativo(_item){
+
+        $("#btn_menu_dashboard").removeClass("active");
+        $("#btn_menu_cotacoes").removeClass("active");
+        $("#btn_menu_esportes").removeClass("active");
+        $("#btn_menu_fofocas").removeClass("active");
+        $("#btn_menu_mensagem").removeClass("active");
+
+        $(_item).addClass("active");
 }
 
 function fecha_sidebar(){
@@ -25,6 +37,8 @@ function fecha_sidebar(){
 }
 
 function mostrar_dashboard(){
+        troca_item_ativo("#btn_menu_dashboard");
+        $("#menu_fofocas").hide();
         esconde_divs();
         document.getElementById("altera_titulo").innerHTML="Dashboard";
         fecha_sidebar();
@@ -32,6 +46,8 @@ function mostrar_dashboard(){
 }
 
 function mostrar_cotacoes(){
+        troca_item_ativo("#btn_menu_cotacoes");
+        $("#menu_fofocas").hide();
         esconde_divs();
         document.getElementById("altera_titulo").innerHTML="Cotações Diárias";
         fecha_sidebar();
@@ -39,6 +55,8 @@ function mostrar_cotacoes(){
 }
 
 function mostrar_esportes(){
+        troca_item_ativo("#btn_menu_esportes");
+        $("#menu_fofocas").hide();
         esconde_divs();
         document.getElementById("altera_titulo").innerHTML="Notícias Esportes";
         fecha_sidebar();
@@ -46,6 +64,8 @@ function mostrar_esportes(){
 }
 
 function mostrar_mensagem(){
+        troca_item_ativo("#btn_menu_mensagem");
+        $("#menu_fofocas").hide();
         esconde_divs();
         document.getElementById("altera_titulo").innerHTML="Dashboard";
         fecha_sidebar();

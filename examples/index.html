@@ -34,25 +34,25 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item active  " id="btn_menu_dashboard">
             <a class="nav-link" href="#" onclick="mostrar_dashboard()">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item " id="btn_menu_cotacoes">
             <a class="nav-link" href="#" onclick="mostrar_cotacoes()">
               <i class="material-icons">monetization_on</i>
               <p>Cotações</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item " id="btn_menu_esportes">
             <a class="nav-link" href="#" onclick="mostrar_esportes()">
               <i class="material-icons">fitness_center</i>
               <p>Esportes</p>
             </a>
           </li>
-          <li class="treeview">
+          <li class="treeview" id="btn_menu_fofocas">
             <a class="nav-link" href="#" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" onclick="show_menu_fofocas()">
               <i class="material-icons">forum</i>
               <p>Fofocas</p>
@@ -63,7 +63,7 @@
               <li><a class="dropdown-item" href="#" onclick="retorna_fofocas(3)">Ultimas</a> </li>
             </ul>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item "id="btn_menu_mensagem">
             <a class="nav-link" href="#" onclick="mostrar_mensagem()">
               <i class="material-icons">local_post_office</i>
               <p>Contato</p>
@@ -117,10 +117,6 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-          
-          
-          
-          
           <div class="row" id="linha_mensagens">
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
@@ -139,14 +135,9 @@
               </div>
             </div>
           </div>
-         
           <div class="row" id="linha_cotacoes"></div>
           <div class="row" id="linha_fofocas"></div>
           <div class="row" id="linha_esportes"></div>
-
-
-
-
         </div>
       </div>
       <footer class="footer">
