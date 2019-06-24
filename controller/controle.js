@@ -31,9 +31,11 @@ function troca_item_ativo(_item){
 }
 
 function fecha_sidebar(){
-        $(".close-layer").removeClass("visible").addClass("invisible");
         $(".navbar-toggler").removeClass("toggled");
         $("html").removeClass("nav-open");  
+        $(".close-layer").removeClass("visible").addClass("invisible");
+        $(".close-layer").remove();
+        $(".navbar-toggler").click();
 }
 
 function mostrar_dashboard(){
