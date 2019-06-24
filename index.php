@@ -1,4 +1,4 @@
 <?php
-	include_once("examples/dashboard.html");
+	include_once("examples/index.html");
 
 ?>
