@@ -16,7 +16,7 @@ function get_fofocas(){
       $.each(success.destaques, function(idx, obj){     
         str_destaques += '<div class="col-md-4">'
         str_destaques += '   <div class="card card-chart">'
-        str_destaques += '       <img class="card-header card-header" src="'+obj.imagem+'">'   
+        str_destaques += '       <img class="card-header card-header" style="height: 300px" src="'+obj.imagem+'">'   
         str_destaques += '        <div class="card-body">'
         str_destaques += '            <h4 class="card-title">'+obj.titulo+'</h4>'
         str_destaques += '            <p class="card-category">'+obj.conteudo+'</p>'
