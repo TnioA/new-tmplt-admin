@@ -6,7 +6,7 @@ function retorna_moedas(){
     	method: "get",
     	dataType: "json",
         success: function(success){
-    	    //console.log(success);
+    	    console.log(success);
             var str = "";
             $.each(success.moedas, function(idx, obj){
 
