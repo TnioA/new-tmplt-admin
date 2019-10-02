@@ -35,7 +35,7 @@ function get_fofocas(){
         str_fofocas += '  <h4 class="card-header">'+ obj.titulo +'</h4>';
         str_fofocas += '    <div class="card-body">';
         $.each(obj.conteudo, function(idx, obj2){
-          str_fofocas += '    <img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="'+obj2.imagem+'" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>';
+          str_fofocas += '    <img class="bd-placeholder-img card-img-top" width="100%" height="100%" style="height: 300px" src="'+obj2.imagem+'" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>';
           str_fofocas += '      <p class="card-text">'+ obj2.conteudo +'</p>';
           str_fofocas += '      <br>';
         });
@@ -47,7 +47,7 @@ function get_fofocas(){
       $.each(success.ultimas, function(idx, obj){        
         str_ultimas += '<div class="col-md-4">'
         str_ultimas += '   <div class="card card-chart">'
-        str_ultimas += '       <img class="card-header card-header" src="'+obj.imagem+'">'   
+        str_ultimas += '       <img class="card-header card-header" style="height: 300px" src="'+obj.imagem+'">'   
         str_ultimas += '        <div class="card-body">'
         str_ultimas += '            <p class="card-category">'+obj.conteudo+'</p>'
         str_ultimas += '        </div>'
